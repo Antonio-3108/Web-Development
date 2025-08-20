@@ -6,6 +6,25 @@
     <title>Web Development</title>
     <link rel="icon" type="image/x-icon" href="Imagenes/favicon.ico">
 </head>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
 <header>
     <section id="presentacion">
         <div style="display: flex; align-items: center; margin: 20px 0;">
@@ -16,7 +35,6 @@
             </div>
         </div>
     </section>
-
 
 </header>
 <nav>
@@ -71,6 +89,65 @@
         </ul>
     </section>
 
+    <!--Tablas-->
+    <section id="educacion">
+        <h2>Educación</h2>
+        <caption>Historial Académico</caption>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Año</th>
+                    <th scope="col">Institucion</th>
+                    <th scope="col">Carrera / Titulo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2008 - 2016</td>
+                    <td>Colegio Metropolitano de Guatemala</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td>2017 - 2022</td>
+                    <td>Colegio Valle Verde</td>
+                    <td>Bachiller en Ciencias y Letras, Diploma de Highschool</td>
+                </tr>
+                <tr>
+                    <td>2023 - a la fecha (2025)</td>
+                    <td>Universidad Francisco Marroquín</td>
+                    <td>Ingeniería en Computer Science</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+    <section id="experiencia">
+        <h2>Experiencia Laboral</h2>
+        <caption>Historial Laboral</caption>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Periodo</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Puesto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Junio 2024</td>
+                    <td>SISAP</td>
+                    <td>Pasantia</td>
+                </tr>
+                <tr>
+                    <td>---</td>
+                    <td>Google</td>
+                    <td>Desarrollador de Software</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <br>
+    
     <div style="text-align: right; margin: 20px 0;">
         <a href="Descarga\Web Development CV.pdf" 
         download="Descarga\Web Development CV.pdf"
