@@ -48,9 +48,11 @@ nav a:hover {
 
 /* Tablas */
 table {
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     width: 60%;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 caption {
@@ -60,20 +62,24 @@ caption {
 th {
     font-size: 0.9rem;
     letter-spacing: 0.5px;
+    font-size: 18px;
 }
 
 td, th {
     text-align: left;
     padding: 1rem;
-    border: 1px solid whitesmoke;
+    border-bottom: 1px solid #f0f0f0;;
 }
 
 thead {
-    background-color: #dddddd;
+    background-color: white;
+    margin-bottom: 20px;
+    
 }
 
 tbody {
-    background-color: #eeeeee;
+    background-color: white;
+    font-weight: 500;
 }
 
 /* Boton de descarga */
