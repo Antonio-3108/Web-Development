@@ -1,0 +1,46 @@
+body {
+    background-color: whitesmoke;
+    font-family: arial, sans-serif;
+}
+
+/* Imagen de perfil */
+img.profile-picture {
+    width: 120px;
+    height: 140px;
+    border-radius: 15px;
+    margin-right: 20px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Tablas */
+table {
+    border-collapse: collapse;
+    width: 60%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+caption {
+    display: none;
+}
+
+th {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+td, th {
+    text-align: left;
+    padding: 1rem;
+    border: 1px solid whitesmoke;
+}
+
+thead {
+    background-color: #dddddd;
+}
+
+tbody {
+    background-color: #eeeeee;
+}
+

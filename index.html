@@ -5,30 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Development</title>
     <link rel="icon" type="image/x-icon" href="Imagenes/favicon.ico">
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
 
 <header>
     <section id="presentacion">
         <div style="display: flex; align-items: center; margin: 20px 0;">
-            <img src="Imagenes/mi-foto.png" alt="José Antonio Valdés Lafuente" width="120" height="120" style="border-radius: 47%; margin-right: 20px; object-fit: cover;">
+            <img class="profile-picture" src="Imagenes/mi-foto.png" alt="José Antonio Valdés Lafuente" >
             <div>
                 <h2>José Antonio Valdés Lafuente</h2>
                 <p>Desarrollador</p>
@@ -92,8 +75,8 @@ tr:nth-child(even) {
     <!--Tablas-->
     <section id="educacion">
         <h2>Educación</h2>
-        <caption>Historial Académico</caption>
         <table>
+            <caption>Historial Académico</caption>
             <thead>
                 <tr>
                     <th scope="col">Año</th>
@@ -123,8 +106,8 @@ tr:nth-child(even) {
     <br>
     <section id="experiencia">
         <h2>Experiencia Laboral</h2>
-        <caption>Historial Laboral</caption>
         <table>
+            <caption>Historial Laboral</caption>
             <thead>
                 <tr>
                     <th scope="col">Periodo</th>
@@ -151,9 +134,9 @@ tr:nth-child(even) {
     <div style="text-align: right; margin: 20px 0;">
         <a href="Descarga\Web Development CV.pdf" 
         download="Descarga\Web Development CV.pdf"
-        style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;"
+        class="download-btn"
         title="Descargar CV en PDF">
-        Descargar
+        Descargar CV
         </a>
     </div>
 </body>
