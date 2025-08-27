@@ -93,3 +93,52 @@ tbody {
     color: white;
     text-decoration: none;
 }
+
+
+/* Flexbox: Sobre mí */
+#Sobre mi {
+    margin: 20px;
+}
+
+#Sobre mi h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sobre-mi-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.sobre-mi-columna {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-mi-columna h3 {
+    color: black;
+    margin-bottom: 15px;
+    font-size: 18px;
+    padding-bottom: 8px;
+}
+
+.sobre-mi-columna ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sobre-mi-columna li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-weight: 500;
+}
+
+.sobre-mi-columna li:last-child {
+    border-bottom: none;
+}
