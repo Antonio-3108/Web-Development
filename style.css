@@ -91,15 +91,16 @@ table {
     border-spacing: 0;
     width: 60%;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 caption {
     display: none;
 }
 
-th {
+
+/* th {
     font-size: 0.9rem;
     letter-spacing: 0.5px;
     font-size: 18px;
@@ -110,18 +111,19 @@ td, th {
     padding: 1rem;
     border-bottom: 1px solid #f0f0f0;;
 }
-
+*/ 
+/* 
 thead {
     background-color: white;
     margin-bottom: 20px;
     
-}
+} */
 
 tbody {
     background-color: white;
     font-weight: 500;
     
-}
+} 
 
 /* Boton de descarga */
 .btn a {
