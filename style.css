@@ -191,6 +191,126 @@ nav a:hover {
 .card-header { cursor: pointer; }
 .card { overflow: visible; }
 
+/* Estilos para el buscador de habilidades */
+.buscador-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    border: 1px solid #e0e0e0;
+}
+
+.oscuro .buscador-container {
+    background-color: #101010;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border-color: #333;
+}
+
+/* Estilos para el input group */
+.buscador-container .input-group-text {
+    background-color: #f8f9fa;
+    border-color: #ced4da;
+    color: #6c757d;
+}
+
+.oscuro .buscador-container .input-group-text {
+    background-color: #181818;
+    border-color: #333;
+    color: #cccccc;
+}
+
+.buscador-container .form-control {
+    border-color: #ced4da;
+}
+
+.buscador-container .form-control:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+.oscuro .buscador-container .form-control {
+    background-color: #181818;
+    border-color: #333;
+    color: #cccccc;
+}
+
+.oscuro .buscador-container .form-control:focus {
+    background-color: #181818;
+    border-color: #3b82f6;
+    color: #cccccc;
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+.oscuro .buscador-container .form-control::placeholder {
+    color: #888;
+}
+
+/* Botón de limpiar */
+.buscador-container .btn-outline-secondary {
+    color: #6c757d;
+    border-color: #ced4da;
+}
+
+.buscador-container .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+
+.oscuro .buscador-container .btn-outline-secondary {
+    color: #cccccc;
+    border-color: #333;
+}
+
+.oscuro .buscador-container .btn-outline-secondary:hover {
+    background-color: #333;
+    border-color: #333;
+    color: white;
+}
+
+/* Resultados de búsqueda - solo para el contenedor */
+#resultadosBusqueda {
+    /* Solo un contenedor vacío para mantener el layout */
+}
+
+/* Resaltado de términos de búsqueda */
+mark {
+    background-color: #fef08a;
+    color: #854d0e;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.oscuro mark {
+    background-color: #fbbf24;
+    color: #1f2937;
+}
+
+/* Asegurar que el botón tenga el z-index correcto */
+.buscador-inline .input-group .btn {
+    z-index: 3;
+}
+
+/* Responsive para el header */
+@media (max-width: 768px) {
+    .sobre-mi-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 10px;
+    }
+    
+    .buscador-inline {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    
+    .buscador-inline .input-group-text {
+        padding: 0.5rem;
+    }
+}
+
 /* Tablas */
 .oscuro .card {
     background-color: #181818;
@@ -306,7 +426,6 @@ tbody {
     size: smaller;
 }
 
-/* Botón elegante mejorado - estilo simple */
 .btn-contact {
     background-color: #181818;
     border-color: #181818;
@@ -339,7 +458,6 @@ tbody {
     font-size: 14px;
 }
 
-/* Container para el botón - mejor posicionamiento */
 .text-end {
     display: flex;
     justify-content: flex-end;
@@ -347,7 +465,6 @@ tbody {
     margin-top: 10px;
 }
 
-/* Links Grid - manteniendo la funcionalidad original */
 .links-grid {
     display: flex;
     flex-direction: column;
@@ -424,7 +541,6 @@ tbody {
     color: #60a5fa;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .profile-container {
         flex-direction: column;
