@@ -1,8 +1,62 @@
 body {
-    background-color: whitesmoke;
     margin: 1.45%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+body {
+    background-color: whitesmoke;
+    color: black;
+    transition: all 0.2s linear;
+}
+.oscuro {
+    background-color: #1f1f1f;
+    color: #cccccc;
+}
+
+/* Toggle Button CSS */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+  margin-bottom: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #101010;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
 
 /* Profile Container */
 .profile-container {
@@ -20,7 +74,6 @@ body {
 .header-nav {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    margin-bottom: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,17 +82,21 @@ body {
     padding: 15px;
 }
 
+.oscuro .header-nav {
+    background: #101010;
+}
+
 .header-nav a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
     font-weight: 600;
     font-size: 16px;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
 }
 
 .header-nav a:hover {
-    color: #8a8a8a;
+    color: #cccccc;
 }
 
 
@@ -48,7 +105,12 @@ body {
     width: 120px;
     height: 140px;
     margin-right: 20px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.img-thumbnail {
+    background-color: #101010;
+    border: solid #101010;
 }
 
 /* Links */
@@ -86,13 +148,20 @@ nav a:hover {
 
 
 /* Tablas */
-table {
+.table {
     border-collapse: separate;
     border-spacing: 0;
-    width: 60%;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
+}
+
+.oscuro table {
+    --bs-table-color: #cccccc;
+    --bs-table-bg: #101010;
+    --bs-table-border-color: #1f1f1f;
+    --bs-table-hover-color: white;
+    --bs-table-hover-bg: rgba(var(--bs-emphasis-color-rgb), 0.3);
 }
 
 caption {
@@ -100,30 +169,14 @@ caption {
 }
 
 
-/* th {
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    font-size: 18px;
-}
-
-td, th {
-    text-align: left;
-    padding: 1rem;
-    border-bottom: 1px solid #f0f0f0;;
-}
-*/ 
-/* 
-thead {
-    background-color: white;
-    margin-bottom: 20px;
-    
-} */
-
 tbody {
-    background-color: white;
     font-weight: 500;
-    
 } 
+
+.carousel-item img {
+
+    border-radius: 8px;
+}
 
 /* Boton de descarga */
 .btn a {
@@ -157,11 +210,23 @@ tbody {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.oscuro .sobre-mi-columna {
+    background-color: #101010;
+}
+
 .sobre-mi-columna h3 {
     color: black;
     margin-bottom: 15px;
     font-size: 18px;
     padding-bottom: 8px;
+}
+
+.oscuro .sobre-mi-columna h3 {
+    color: #cccccc;
+}
+
+.oscuro .sobre-mi-columna li {
+    color: #f2f2f2;
 }
 
 .sobre-mi-columna ul {
@@ -196,9 +261,10 @@ tbody {
     align-items: center;
     justify-content: flex-start;
     background: transparent;
-    border-radius: 0;
+    
     padding: 8px 15px;
     border-left: 3px solid transparent;
+    
 }
 
 
@@ -207,6 +273,8 @@ tbody {
     height: 24px;
     margin-right: 12px;
     filter: none;
+    background: whitesmoke;
+    border-radius: 20%;
 }
 
 .link-item a {

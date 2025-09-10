@@ -14,7 +14,7 @@
         <div class="profile-container">
             <div class="profile-info">
 
-                <img src="Imagenes/mi-foto.png" class="rounded" alt="Foto de José Antonio Valdés Lafuente" width="100">
+                <img src="Imagenes/mi-foto.png" class="img-fluid img-thumbnail rounded" alt="Foto de José Antonio Valdés Lafuente" width="100">
 
                 <div>
                     <h2>José Antonio Valdés Lafuente</h2>
@@ -62,6 +62,13 @@
 
 <br>
 <body>
+    <script src="script.js"></script>
+
+    <label class="switch">
+        <input type="checkbox" onclick="modoOscuro()">
+        <span class="slider"></span>
+    </label>
+    
     <section id="Sobre mi">
         <h3>Sobre mí</h3>
         <div class="sobre-mi-container">
@@ -102,7 +109,7 @@
     <br>
     <section id="educacion">
         <h3>Educación</h3>
-        <table class="table table-hover">
+        <table class="table table-hover table-responsive">
             <caption>Historial Académico</caption>
             <thead>
                 <tr>
