@@ -40,7 +40,7 @@ body {
   color: var(--text-color);
   transition: all 0.3s ease;
   line-height: 1.6;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 caption {

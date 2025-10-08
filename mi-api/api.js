@@ -16,6 +16,8 @@ app.use(express.json());            // Convertir JSON del body de las peticiones
 
 // 4. CREAR NUESTRA "BASE DE DATOS" EN MEMORIA
 // ⚠️ IMPORTANTE: Esta base de datos se borra cuando apagamos el servidor
+
+// Habilidades con Nivel
 let projects = [
     { id: 1, name: 'CV en Angular', stars: 5 },      // Proyecto 1
     { id: 2, name: 'Juego de Memoria', stars: 4 }    // Proyecto 2
