@@ -1,0 +1,10 @@
+<button 
+  class="dark-mode-toggle" 
+  (click)="toggleDarkMode()"
+  [class.dark-mode-active]="isDarkMode"
+  [attr.aria-label]="isDarkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
+  title="{{ isDarkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro' }}">
+  
+  <i class="theme-icon" [class]="isDarkMode ? 'bi bi-sun' : 'bi bi-moon'"></i>
+  <span class="theme-text">{{ isDarkMode ? 'Modo Claro' : 'Modo Oscuro' }}</span>
+</button>

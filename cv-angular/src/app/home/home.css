@@ -1,0 +1,41 @@
+
+.projects-stats-container {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 3rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 2rem;
+  align-items: start;
+  margin: 2rem 0;
+}
+
+
+.projects-stats-container > * {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 1400px) {
+  .projects-stats-container {
+    grid-template-columns: 55% 45%;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .projects-stats-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-stats-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+}

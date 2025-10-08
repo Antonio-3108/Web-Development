@@ -1,0 +1,50 @@
+<div class="github-projects-section">
+  <h2>Mis Proyectos</h2>
+
+  <div class="carousel-container" *ngIf="repos.length > 0">
+    <button class="carousel-btn prev-btn" (click)="prevSlide()" [disabled]="currentIndex === 0">
+      &#8249;
+    </button>
+
+    <div class="carousel-wrapper">
+      <div class="carousel-track" [style.transform]="'translateX(-' + (currentIndex * 100) + '%)'">
+        <div class="project-card" *ngFor="let repo of repos">
+          <div class="card-header">
+            <h3 class="project-name">{{ repo.name }}</h3>
+          </div>
+
+          <div class="card-footer">
+            <div class="stars-section">
+              <div class="star-row">
+                <i class="bi bi-star"></i>
+                <span class="star-number">{{ repo.stargazers_count || 0 }}</span>
+              </div>
+              <div class="star-label">Stars</div>
+            </div>
+
+            <a [href]="repo.html_url" target="_blank" class="repo-link">
+              Ver en GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-btn next-btn" (click)="nextSlide()" [disabled]="currentIndex >= maxIndex">
+      &#8250;
+    </button>
+  </div>
+
+  <div class="carousel-dots" *ngIf="totalSlides > 1">
+    <button
+      *ngFor="let slide of [].constructor(totalSlides); let i = index"
+      class="dot"
+      [class.active]="i === currentIndex"
+      (click)="goToSlide(i)">
+    </button>
+  </div>
+
+  <div class="no-projects" *ngIf="!isLoading && repos.length === 0">
+    No se encontraron proyectos públicos.
+  </div>
+</div>
