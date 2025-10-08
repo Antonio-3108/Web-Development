@@ -1,0 +1,48 @@
+
+:root {
+  --bg-color: #f8f9fa;
+  --text-color: #181818;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --header-bg: #f9fafb;
+  --table-header-bg: #f9fafb;
+  --table-row-hover: #f3f4f6;
+  --primary-color: #181818;
+  --primary-hover: #0f0f0f;
+  --accent-color: #181818;
+  --shadow-sm: 0 1px 2px 0 rgba(24, 24, 24, 0.05);
+  --shadow-md: 0 2px 4px -1px rgba(24, 24, 24, 0.1), 0 1px 2px -1px rgba(24, 24, 24, 0.05);
+  --shadow-lg: 0 4px 6px -1px rgba(24, 24, 24, 0.1), 0 2px 4px -1px rgba(24, 24, 24, 0.05);
+  --border-radius: 6px;
+  --border-radius-lg: 8px;
+}
+
+.dark-mode {
+  --bg-color: #212121;
+  --text-color: #e5e5e5;
+  --card-bg: #181818;
+  --card-border: #333333;
+  --header-bg: #181818;
+  --table-header-bg: #181818;
+  --table-row-hover: #2a2a2a;
+  --primary-color: #181818;
+  --primary-hover: #0f0f0f;
+  --accent-color: #181818;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 2px 4px -1px rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  margin: 1.45%;
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  line-height: 1.6;
+  font-size: 12px;
+}
+
+caption {
+  display: none;
+}

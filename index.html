@@ -5,156 +5,248 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Development</title>
     <link rel="icon" type="image/x-icon" href="Imagenes/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
 
 <header>
     <section id="presentacion">
-        <div style="display: flex; align-items: center; margin: 20px 0;">
-            <img src="Imagenes/mi-foto.png" alt="José Antonio Valdés Lafuente" width="120" height="120" style="border-radius: 47%; margin-right: 20px; object-fit: cover;">
-            <div>
-                <h2>José Antonio Valdés Lafuente</h2>
-                <p>Desarrollador</p>
+        <div class="profile-container">
+            <div class="profile-info">
+
+                <img src="Imagenes/mi-foto.png" class="img-fluid img-thumbnail rounded" alt="Foto de José Antonio Valdés Lafuente" width="100">
+
+                <div>
+                    <h2>José Antonio Valdés Lafuente</h2>
+                    <p>Desarrollador</p>
+                </div>
+            </div>
+            
+            
+            <div class="links-grid">
+
+                <div class="link-item" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Visita mi perfil de GitHub para ver mis proyectos">
+                    <img src="Imagenes/github-logo.png" alt="GitHub Logo" width="20" height="20">
+                    <a href="https://github.com/Antonio-3108?tab=repositories" target="_blank" title="Github">GitHub</a>
+                </div>
+
+                <div class="link-item" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Visita mi perfil de LinkedIn">
+                    <img src="Imagenes/linkedin-logo.png" alt="LinkedIn Logo" width="20" height="20">
+                    <a href="www.linkedin.com/in/josé-antonio-valdés-lafuente-05aa312a8" target="_blank" title="LinkedIn">LinkedIn</a>
+                </div>
+
+                <div class="link-item" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Contactame por aqui">
+                    <img src="Imagenes/email-logo.png" alt="Email Logo" width="20" height="20">
+                    <a href="mailto:joseavaldes@ufm.edu" target="_blank" title="Email">Email</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-end">
+            <button type="button" class="btn btn-contact" onclick="document.querySelector('.links-grid').classList.toggle('collapsed')" aria-expanded="false" aria-controls="contact-info">
+            <i class="bi bi-envelope-fill me-2" aria-hidden="true"></i>
+                Información de Contacto
+            </button>
+        </div>
+
+    </section>
+</header>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    });
+</script>
+
+
+
+<br>
+<body>
+    <script src="script.js"></script>
+    
+    <div class="alert alert-secondary alert-secondary-flex" role="alert">
+        <span>
+            <script>
+                const hora = new Date().getHours();
+                let saludo;
+    
+                if (hora < 12) {
+                    saludo = "¡Buenos días!";
+                } else if (hora < 18) {
+                    saludo = "¡Buenas tardes!";
+                } else {
+                    saludo = "¡Buenas noches!";
+                }
+    
+                document.write(saludo);
+            </script>
+        </span>
+        <label class="switch">
+            <input type="checkbox" onclick="modoOscuro()">
+            <span class="slider"></span>
+        </label>
+    </div>
+    </div>
+
+    <section id="Sobre mi">
+        <h3>Sobre mí</h3>
+        <div class="sobre-mi-container">
+            <div class="sobre-mi-columna">
+                <h3>Lenguajes de Programación</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>C</li>
+                    <li>C++</li>
+                    <li>PostgreSQL</li>
+                </ul>
+            </div>
+
+            <div class="sobre-mi-columna">
+                <h3>Tecnologias</h3>
+                <ul>
+                    <li>Docker</li>
+                    <li>Postman</li>
+                    <li>GitHub</li>
+                    <li>MongoDB</li>
+                    <li>Redis</li>
+                </ul>
+            </div>
+
+            <div class="sobre-mi-columna">
+                <h3>Softskills</h3>
+                <ul>
+                    <li>Trabajo en equipo</li>
+                    <li>Adaptabilidad</li>
+                    <li>Resolución de problemas</li>
+                    <li>Atención al detalle</li>
+                </ul>
             </div>
         </div>
     </section>
 
-</header>
-<nav>
-    <a href="#links">Links</a> | <a href="#Sobre mi">Sobre mí</a>
-</nav>
-
-<br>
-<body>
-    <section id="links">
-        <h3>Enlaces de interés</h3>
-            <ul style="padding-left: 0; margin-left: 0; list-style: none;">
-                <li style="display: flex; align-items: center;">
-                    <img src="Imagenes/github-logo.png" alt="GitHub Logo" width="20" height="20" style="margin-right: 8px;">
-                    <a href="https://github.com/Antonio-3108?tab=repositories" target="_blank" title="Github">GitHub</a>
-                </li>
-                <li style="display: flex; align-items: center;">
-                    <img src="Imagenes/linkedin-logo.png" alt="LinkedIn Logo" width="20" height="20" style="margin-right: 8px;">
-                    <a href="www.linkedin.com/in/josé-antonio-valdés-lafuente-05aa312a8" target="_blank" title="LinkedIn">LinkedIn</a>
-                </li>
-                <li style="display: flex; align-items: center;">
-                    <img src="Imagenes/email-logo.png" alt="Email Logo" width="20" height="20" style="margin-right: 8px;">
-                    <a href="mailto:joseavaldes@ufm.edu" target="_blank" title="Email">Email</a>
-                </li>
-            </ul>
-    </section>
-    <br>
-    <section id="Sobre mi">
-        <h2>Sobre mí</h2>
-        <h3>Lenguajes de Programación</h3>
-        <ul>
-            <li>Python</li>
-            <li>C</li>
-            <li>C++</li>
-            <li>PostgreSQL</li>
-        </ul>
-
-        <h3>Tecnologias</h3>
-        <ul>
-            <li>Docker</li>
-            <li>Postman</li>
-            <li>GitHub</li>
-            <li>MongoDB</li>
-            <li>Redis</li>
-        </ul>
-
-        <h3>Softskills</h3>
-        <ul>
-            <li>Trabajo en equipo</li>
-            <li>Adaptabilidad</li>
-            <li>Resolución de problemas</li>
-            <li>Atención al detalle</li>
-        </ul>
-    </section>
-
     <!--Tablas-->
-    <section id="educacion">
-        <h2>Educación</h2>
-        <caption>Historial Académico</caption>
-        <table>
-            <thead>
-                <tr>
-                    <th scope="col">Año</th>
-                    <th scope="col">Institucion</th>
-                    <th scope="col">Carrera / Titulo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2008 - 2016</td>
-                    <td>Colegio Metropolitano de Guatemala</td>
-                    <td>---</td>
-                </tr>
-                <tr>
-                    <td>2017 - 2022</td>
-                    <td>Colegio Valle Verde</td>
-                    <td>Bachiller en Ciencias y Letras, Diploma de Highschool</td>
-                </tr>
-                <tr>
-                    <td>2023 - a la fecha (2025)</td>
-                    <td>Universidad Francisco Marroquín</td>
-                    <td>Ingeniería en Computer Science</td>
-                </tr>
-            </tbody>
-        </table>
+    <br>
+    <section id="educacion" class="my-4">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#educacionCollapse" aria-expanded="false" aria-controls="educacionCollapse" id="educacionHeader">
+                <span class="fw-bold text-uppercase">Educación</span>
+                <span id="arrowIcon">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+            </div>
+            <div class="collapse" id="educacionCollapse">
+                <div class="card-body">
+                    <table class="table table-hover table-responsive mt-2 mb-0">
+                        <caption>Historial Académico</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Año</th>
+                                <th scope="col">Institucion</th>
+                                <th scope="col">Carrera / Titulo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2008 - 2016</td>
+                                <td>Colegio Metropolitano de Guatemala</td>
+                                <td>---</td>
+                            </tr>
+                            <tr>
+                                <td>2017 - 2022</td>
+                                <td>Colegio Valle Verde</td>
+                                <td>Bachiller en Ciencias y Letras, Diploma de Highschool</td>
+                            </tr>
+                            <tr>
+                                <td>2023 - a la fecha (2025)</td>
+                                <td>Universidad Francisco Marroquín</td>
+                                <td>Ingeniería en Computer Science</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiencia" class="my-4">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#experienciaCollapse" aria-expanded="false" aria-controls="experienciaCollapse" id="experienciaHeader">
+                <span class="fw-bold text-uppercase">Experiencia Laboral</span>
+                <span id="arrowIconExp">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+            </div>
+            <div class="collapse" id="experienciaCollapse">
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <caption>Historial Laboral</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Periodo</th>
+                                <th scope="col">Empresa</th>
+                                <th scope="col">Puesto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Junio 2024</td>
+                                <td>SISAP</td>
+                                <td>Pasantia</td>
+                            </tr>
+                            <tr>
+                                <td>---</td>
+                                <td>Google</td>
+                                <td>Desarrollador de Software</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </section>
     <br>
-    <section id="experiencia">
-        <h2>Experiencia Laboral</h2>
-        <caption>Historial Laboral</caption>
-        <table>
-            <thead>
-                <tr>
-                    <th scope="col">Periodo</th>
-                    <th scope="col">Empresa</th>
-                    <th scope="col">Puesto</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Junio 2024</td>
-                    <td>SISAP</td>
-                    <td>Pasantia</td>
-                </tr>
-                <tr>
-                    <td>---</td>
-                    <td>Google</td>
-                    <td>Desarrollador de Software</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <br>
+
+    <h3>Imagenes</h3>
+    <div class="d-flex justify-content-right my-4">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" style="max-width: 320px;">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="Imagenes/placeholder.png" class="d-block mx-auto" alt="..." width="300" height="180">
+            </div>
+            <div class="carousel-item">
+                <img src="Imagenes/placeholder.png" class="d-block mx-auto" alt="..." width="300" height="180">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    </div>
     
-    <div style="text-align: right; margin: 20px 0;">
-        <a href="Descarga\Web Development CV.pdf" 
-        download="Descarga\Web Development CV.pdf"
-        style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;"
-        title="Descargar CV en PDF">
-        Descargar
-        </a>
+    <br>
+
+    <div class="text-end">
+        <button type="button" class="btn btn-primary">
+            <a href="Descarga\Web Development CV.pdf" 
+            download="Descarga\Web Development CV.pdf"
+            title="Descargar CV en PDF">
+            Descargar CV
+            </a>
+        </button>
     </div>
 </body>
 

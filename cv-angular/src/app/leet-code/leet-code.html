@@ -1,0 +1,97 @@
+<div class="leetcode-section">
+  <h2>LeetCode Stats</h2>
+
+  <div class="leetcode-card" *ngIf="profile">
+    <div class="card-content">
+      <div class="chart-section">
+        <div class="circular-chart">
+          <svg viewBox="0 0 100 100" class="progress-ring">
+            <circle
+              class="progress-ring-bg"
+              cx="50"
+              cy="50"
+              r="45"
+            />
+
+            <circle
+              *ngIf="hardPercentage > 0"
+              class="progress-ring-hard"
+              cx="50"
+              cy="50"
+              r="45"
+              [attr.stroke-dasharray]="circumference"
+              [attr.stroke-dashoffset]="hardOffset"
+            />
+
+            <circle
+              *ngIf="mediumPercentage > 0"
+              class="progress-ring-medium"
+              cx="50"
+              cy="50"
+              r="45"
+              [attr.stroke-dasharray]="circumference"
+              [attr.stroke-dashoffset]="mediumOffset"
+            />
+
+            <circle
+              *ngIf="easyPercentage > 0"
+              class="progress-ring-easy"
+              cx="50"
+              cy="50"
+              r="45"
+              [attr.stroke-dasharray]="circumference"
+              [attr.stroke-dashoffset]="easyOffset"
+            />
+          </svg>
+
+          <div class="chart-center">
+            <div class="solved-count">{{ profile.totalSolved }}</div>
+            <div class="total-count">/{{ profile.totalProblems }}</div>
+            <div class="solved-label">Solved</div>
+          </div>
+        </div>
+
+        <div class="attempting">
+          <span class="attempting-dot"></span>
+          <span class="attempting-text">{{ profile.attempting }} Attempting</span>
+        </div>
+      </div>
+
+      <div class="stats-section">
+        <div class="stat-item easy">
+          <div class="stat-label">Easy</div>
+          <div class="stat-value">
+            {{ profile.problemStats.easy.solved }}/{{ profile.problemStats.easy.total }}
+          </div>
+        </div>
+
+        <div class="stat-item medium">
+          <div class="stat-label">Medium</div>
+          <div class="stat-value">
+            {{ profile.problemStats.medium.solved }}/{{ profile.problemStats.medium.total }}
+          </div>
+        </div>
+
+        <div class="stat-item hard">
+          <div class="stat-label">Hard</div>
+          <div class="stat-value">
+            {{ profile.problemStats.hard.solved }}/{{ profile.problemStats.hard.total }}
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-section">
+        <div class="rank-container">
+          <div class="rank-label">Rank</div>
+          <div class="rank-value">{{ formatRank(profile.rank) }}</div>
+        </div>
+
+        <button class="visit-profile-btn" (click)="onVisitProfile()">
+          <a href="https://leetcode.com/u/sBranch31/">
+            Visit profile
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
