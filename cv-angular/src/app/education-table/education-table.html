@@ -1,13 +1,13 @@
 <section id="educacion" class="my-4">
     <div class="card">
-        <div class="card-header d-flex justify-content-between align-items-center" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#educacionCollapse" aria-expanded="false" aria-controls="educacionCollapse" id="educacionHeader">
+        <div class="card-header d-flex justify-content-between align-items-center" style="cursor:pointer;" data-bs-toggle="collapse" data-bs-target="#educacionCollapse" [attr.aria-expanded]="isExpanded" aria-controls="educacionCollapse" id="educacionHeader">
             <span class="fw-bold text-uppercase">Educación</span>
-            <span id="arrowIcon">
+            <span id="arrowIcon" [class.rotated]="isExpanded">
                 <i class="bi bi-chevron-down"></i>
             </span>
         </div>
 
-        <div class="collapse" id="educacionCollapse">
+        <div class="collapse" id="educacionCollapse" [class.show]="isExpanded">
             <div class="card-body">
                 <table class="table table-hover table-responsive mt-2 mb-0">
                     <caption>Historial Académico</caption>

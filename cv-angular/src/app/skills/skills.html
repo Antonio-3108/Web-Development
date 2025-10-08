@@ -1,12 +1,9 @@
-<h3>Sobre mí</h3>
+<br>
 <div class="sobre-mi-container">
     <div class="sobre-mi-columna">
         <h3>Lenguajes de Programación</h3>
         <ul>
-            <li>Python</li>
-            <li>C</li>
-            <li>C++</li>
-            <li>PostgreSQL</li>
+            <li *ngFor="let language of programmingLanguages">{{ language }}</li>
         </ul>
     </div>
 
