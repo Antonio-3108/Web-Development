@@ -18,9 +18,11 @@ app.use(express.json());            // Convertir JSON del body de las peticiones
 // ⚠️ IMPORTANTE: Esta base de datos se borra cuando apagamos el servidor
 
 // Habilidades con Nivel
-let projects = [
-    { id: 1, name: 'CV en Angular', stars: 5 },      // Proyecto 1
-    { id: 2, name: 'Juego de Memoria', stars: 4 }    // Proyecto 2
+let skills = [
+    { id: 1, name: 'Python',     level: 80, category: 'Backend' },
+    { id: 2, name: 'C',          level: 55, category: 'Backend' },
+    { id: 3, name: 'C++',        level: 45, category: 'Backend' },
+    { id: 4, name: 'PostgreSQL', level: 35, category: 'DevOps'  },
 ];
 
 // ========================================
@@ -28,28 +30,28 @@ let projects = [
 // ========================================
 
 // 5. RUTA GET /projects - OBTENER TODOS LOS PROYECTOS
-app.get('/projects', (req, res) => {
+app.get('/skills', (req, res) => {
     // req = request (petición que llega)
     // res = response (respuesta que enviamos)
-    res.json(projects); // Enviar todos los proyectos como JSON
+    res.json(skills); // Enviar todos los proyectos como JSON
 });
 
 // 6. RUTA GET /projects/:id - OBTENER UN PROYECTO ESPECÍFICO POR ID
-app.get('/projects/:id', (req, res) => {
+app.get('/skills/:id', (req, res) => {
     const id = Number(req.params.id);           // Convertir el ID de string a número
-    const proyecto = projects.find(p => p.id === id); // Buscar el proyecto con ese ID
+    const skill = skills.find(p => p.id === id); // Buscar el proyecto con ese ID
 
     // Si no encuentra el proyecto, devolver error 404
-    if (!proyecto) {
-        return res.status(404).json({ error: 'Proyecto no encontrado' });
+    if (!skill) {
+        return res.status(404).json({ error: 'Skill no encontrada' });
     }
 
-    res.json(proyecto); // Enviar el proyecto encontrado
+    res.json(skill); // Enviar el proyecto encontrado
 });
 
 // 7. RUTA POST /projects - CREAR UN NUEVO PROYECTO
-app.post('/projects', (req, res) => {
-    const { name, stars } = req.body; // Extraer name y stars del body de la petición
+app.post('/skills', (req, res) => {
+    const { name, level, category } = req.body; // Extraer name y level del body de la petición
 
     // Validar que el nombre sea obligatorio
     if (!name) {
@@ -57,51 +59,53 @@ app.post('/projects', (req, res) => {
     }
 
     // Generar un nuevo ID (el más alto + 1)
-    const nuevoId = Math.max(0, ...projects.map(p => p.id)) + 1;
+    const nuevoId = Math.max(0, ...skills.map(p => p.id)) + 1;
 
     // Crear el nuevo proyecto
-    const nuevoProyecto = {
+    const nuevaSkill = {
         id: nuevoId,
         name: name,
-        stars: Number(stars) || 0  // Convertir stars a número, si no existe usar 0
+        level: Number(level) || 0,  // Convertir level a número, si no existe usar 0
+        category: category
     };
 
-    projects.push(nuevoProyecto); // Agregar el proyecto a nuestra "base de datos"
-    res.status(201).json(nuevoProyecto); // Devolver el proyecto creado con código 201
+    skills.push(nuevaSkill); // Agregar el proyecto a nuestra "base de datos"
+    res.status(201).json(nuevaSkill); // Devolver el proyecto creado con código 201
 });
 
 // 8. RUTA PATCH /projects/:id - ACTUALIZAR PARCIALMENTE UN PROYECTO
-app.patch('/projects/:id', (req, res) => {
+app.patch('/skills/:id', (req, res) => {
     const id = Number(req.params.id);           // ID del proyecto a actualizar
-    const proyecto = projects.find(p => p.id === id); // Buscar el proyecto
+    const skill = skills.find(p => p.id === id); // Buscar el proyecto
 
     // Si no encuentra el proyecto, devolver error 404
-    if (!proyecto) {
-        return res.status(404).json({ error: 'Proyecto no encontrado' });
+    if (!skill) {
+        return res.status(404).json({ error: 'Skill no encontrada' });
     }
 
-    const { name, stars } = req.body; // Datos nuevos que queremos actualizar
+    const { name, level, category } = req.body; // Datos nuevos que queremos actualizar
 
     // Actualizar solo los campos que vienen en la petición
-    if (name !== undefined) proyecto.name = name;           // Si viene name, actualizarlo
-    if (stars !== undefined) proyecto.stars = Number(stars); // Si viene stars, actualizarlo
+    if (name !== undefined) skill.name = name;             // Si viene name, actualizarlo
+    if (level !== undefined) skill.level = Number(level);  // Si viene level, actualizarlo
+    if (category !== undefined) skill.category = category; // Si viene category, actualizarlo
 
-    res.json(proyecto); // Devolver el proyecto actualizado
+    res.json(skill); // Devolver el proyecto actualizado
 });
 
 // 9. RUTA DELETE /projects/:id - ELIMINAR UN PROYECTO
-app.delete('/projects/:id', (req, res) => {
+app.delete('/skills/:id', (req, res) => {
     const id = Number(req.params.id);                    // ID del proyecto a eliminar
-    const indice = projects.findIndex(p => p.id === id); // Buscar el índice del proyecto
+    const indice = skills.findIndex(p => p.id === id); // Buscar el índice del proyecto
 
     // Si no encuentra el proyecto, devolver error 404
     if (indice === -1) {
-        return res.status(404).json({ error: 'Proyecto no encontrado' });
+        return res.status(404).json({ error: 'Skill no encontrada' });
     }
 
     // Eliminar el proyecto del array y guardarlo en una variable
-    const proyectoEliminado = projects.splice(indice, 1)[0];
-    res.json(proyectoEliminado); // Devolver el proyecto que se eliminó
+    const skillEliminada = skills.splice(indice, 1)[0];
+    res.json(skillEliminada); // Devolver el proyecto que se eliminó
 });
 
 // 10. MANEJAR RUTAS NO ENCONTRADAS (404)
@@ -113,9 +117,9 @@ app.use((req, res) => {
 app.listen(PORT, () => {
     console.log(`🚀 API escuchando en http://localhost:${PORT}`);
     console.log(`📋 Endpoints disponibles:`);
-    console.log(`   GET    /projects     - Ver todos los proyectos`);
-    console.log(`   GET    /projects/:id - Ver un proyecto específico`);
-    console.log(`   POST   /projects     - Crear un nuevo proyecto`);
-    console.log(`   PATCH  /projects/:id - Actualizar un proyecto`);
-    console.log(`   DELETE /projects/:id - Eliminar un proyecto`);
+    console.log(`   GET    /skills     - Ver todas las skills`);
+    console.log(`   GET    /skills/:id - Ver una skills específica`);
+    console.log(`   POST   /skills     - Crear una skill nueva`);
+    console.log(`   PATCH  /skills/:id - Actualizar una skill`);
+    console.log(`   DELETE /skills/:id - Eliminar una skill`);
 });
