@@ -35,7 +35,6 @@
 }
 
 .dark-mode-toggle.dark-mode-active:hover {
-  background-color: var(--primary-color);
   border-color: var(--primary-color);
 }
 
